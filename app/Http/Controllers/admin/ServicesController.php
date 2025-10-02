@@ -5,12 +5,13 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use Illuminate\Support\Facades\Storage;
 
 class ServicesController extends Controller
 {
     public function index()
     {
-        $services = Service::paginate(5);
+        $services = Service::latest()->paginate(10);
         return view('admin.service.index', compact('services'));
     }
 
@@ -21,23 +22,55 @@ class ServicesController extends Controller
 
     public function store(Request $request)
     {
-        // Validation et stockage du service
-        return redirect()->route('admin.services.index')->with('success', 'Service créé avec succès.');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'categorie' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('services', 'public');
+        }
+
+        Service::create($validated);
+
+        return redirect()->route('admin.services.index')->with('success', 'Service ajouté avec succès.');
     }
 
-    public function edit($id)
+    public function edit(Service $service)
     {
-        return view('admin.service.edit', compact('id'));
+        return view('admin.service.edit', compact('service'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Service $service)
     {
-        // Validation et mise à jour du service
-        return redirect()->route('admin.services.index')->with('success', 'Service mis à jour avec succès.');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'categorie' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($service->image) {
+                Storage::disk('public')->delete($service->image);
+            }
+            $validated['image'] = $request->file('image')->store('services', 'public');
+        }
+
+        $service->update($validated);
+
+        return redirect()->route('admin.services.index')->with('success', 'Service modifié avec succès.');
     }
-    public function destroy($id)
+
+    public function destroy(Service $service)
     {
-        // Suppression du service
+        if ($service->image) {
+            Storage::disk('public')->delete($service->image);
+        }
+        $service->delete();
+
         return redirect()->route('admin.services.index')->with('success', 'Service supprimé avec succès.');
     }
 }

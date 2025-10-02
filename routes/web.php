@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\AnnoncesController;
 use App\Http\Controllers\admin\ServicesController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\ContactsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,10 +43,25 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
 Route::get('/membres', [MembreController::class, 'index'])->name('membre');
 
-Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
+// Routes d'administration
+Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('services', ServicesController::class);
-    Route::resource('annonces', AnnoncesController::class);
-    Route::resource('team', TeamController::class);
+    Route::resource('services', ServicesController::class)->except(['show']);
+
+    Route::resource('annonces', AnnoncesController::class)->except(['show']);
+    
+    Route::resource('membres', TeamController::class)->except(['show']);
+    
+    // Route::get('contacts', [ContactsController::class, 'index'])->name('contacts.index');
+    // Route::get('contacts/{contact}', [ContactsController::class, 'show'])->name('contacts.show');
+    // Route::delete('contacts/{contact}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
 });
+
+
+// Route de déconnexion
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');

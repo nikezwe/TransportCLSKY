@@ -1,51 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // --- Toggle Sidebar pour version mobile ---
-    const toggleBtn = document.querySelector("#sidebar-toggle");
-    const sidebar = document.querySelector(".sidebar");
-    
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("active");
-        });
-    }
+// public/js/admin.js
 
-    // --- Confirmation de suppression ---
-    const deleteButtons = document.querySelectorAll(".btn-delete");
-    deleteButtons.forEach(btn => {
-        btn.addEventListener("click", function (e) {
-            if (!confirm("Voulez-vous vraiment supprimer cet élément ?")) {
-                e.preventDefault();
-            }
-        });
-    });
+// Toggle Sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
 
-    // --- Notification simple ---
-    const flashMessage = document.querySelector(".flash-message");
-    if (flashMessage) {
+// Auto-hide alerts after 5 seconds
+document.addEventListener('DOMContentLoaded', function() {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
         setTimeout(() => {
-            flashMessage.style.opacity = "0";
-        }, 4000); // disparaît après 4s
-    }
-
-    // --- Exemple Chart.js pour statistiques ---
-    const ctx = document.getElementById('statsChart');
-    if (ctx) {
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Services', 'Annonces', 'Messages'],
-                datasets: [{
-                    label: 'Statistiques',
-                    data: [25, 12, 58],
-                    backgroundColor: ['#3498db', '#e67e22', '#2ecc71']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
-    }
+            alert.style.opacity = '0';
+            setTimeout(() => {
+                alert.remove();
+            }, 300);
+        }, 5000);
+    });
 });
+
+// Confirm delete
+function confirmDelete(message = 'Êtes-vous sûr de vouloir supprimer cet élément ?') {
+    return confirm(message);
+}
+
+// Image preview
+function previewImage(input, previewId) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById(previewId).src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}

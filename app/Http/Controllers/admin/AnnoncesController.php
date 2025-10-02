@@ -5,12 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Annonce;
+use Illuminate\Support\Facades\Storage;
+
 
 class AnnoncesController extends Controller
 {
     public function index()
     {
-        $annonce = Annonce::paginate(5); // Remplacez par la récupération réelle des annonces
+        $annonces = Annonce::latest()->paginate(10);
         return view('admin.annonce.index', compact('annonces'));
     }
 
@@ -18,26 +20,58 @@ class AnnoncesController extends Controller
     {
         return view('admin.annonce.create');
     }
+
     public function store(Request $request)
     {
-        // Validation et stockage de l'annonce
-        return redirect()->route('admin.annonces.index')->with('success', 'Annonce créée avec succès.');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'link' => 'nullable|url',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('annonces', 'public');
+        }
+
+        Annonce::create($validated);
+
+        return redirect()->route('admin.annonces.index')->with('success', 'Annonce ajoutée avec succès.');
     }
 
-    public function edit($id)
+    public function edit(Annonce $annonce)
     {
-        return view('admin.annonce.edit', compact('id'));
+        return view('admin.annonce.edit', compact('annonce'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Annonce $annonce)
     {
-        // Validation et mise à jour de l'annonce
-        return redirect()->route('admin.annonces.index')->with('success', 'Annonce mise à jour avec succès.');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'link' => 'nullable|url',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($annonce->image) {
+                Storage::disk('public')->delete($annonce->image);
+            }
+            $validated['image'] = $request->file('image')->store('annonces', 'public');
+        }
+
+        $annonce->update($validated);
+
+        return redirect()->route('admin.annonces.index')->with('success', 'Annonce modifiée avec succès.');
     }
 
-    public function destroy($id)
+    public function destroy(Annonce $annonce)
     {
-        // Suppression de l'annonce
+        if ($annonce->image) {
+            Storage::disk('public')->delete($annonce->image);
+        }
+        $annonce->delete();
+
         return redirect()->route('admin.annonces.index')->with('success', 'Annonce supprimée avec succès.');
     }
 }

@@ -1,103 +1,157 @@
+<!-- resources/views/admin/dashboard.blade.php -->
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
-@section('page-title', 'Dashboard')
+@section('title', 'Dashboard - Administration CLSKY')
 
 @section('content')
-<!-- Stats Cards -->
+<div class="page-header">
+    <h1>Tableau de bord</h1>
+    <p>Bienvenue dans l'espace d'administration CLSKY</p>
+</div>
+
+<!-- Statistics -->
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="stat-icon blue">
-            <i class="fas fa-concierge-bell"></i>
+        <div class="stat-icon primary">
+            <i class="fas fa-briefcase"></i>
         </div>
         <div class="stat-info">
             <h3>{{ $stats['services'] }}</h3>
-            <p>Total Services</p>
+            <p>Services</p>
         </div>
     </div>
 
     <div class="stat-card">
-        <div class="stat-icon green">
+        <div class="stat-icon success">
             <i class="fas fa-bullhorn"></i>
         </div>
         <div class="stat-info">
             <h3>{{ $stats['annonces'] }}</h3>
-            <p>Total Annonces</p>
+            <p>Annonces</p>
         </div>
     </div>
 
     <div class="stat-card">
-        <div class="stat-icon orange">
+        <div class="stat-icon warning">
             <i class="fas fa-users"></i>
         </div>
         <div class="stat-info">
             <h3>{{ $stats['membres'] }}</h3>
-            <p>Total Membres</p>
+            <p>Membres d'équipe</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon danger">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="stat-info">
+            <h3>{{ $stats['contacts'] }}</h3>
+            <p>Messages reçus</p>
         </div>
     </div>
 </div>
 
 <!-- Recent Content -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-    <!-- Recent Annonces -->
-    <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h2 style="font-size: 20px; margin-bottom: 20px; color: #2c3e50;">Dernières Annonces</h2>
-        @forelse($stats['recent_annonces'] as $annonce)
-            <div style="padding: 15px; border-bottom: 1px solid #ecf0f1; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 5px;">{{ Str::limit($annonce->title, 30) }}</h4>
-                    <small style="color: #7f8c8d;">{{ $annonce->formatted_date }}</small>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+    <!-- Recent Contacts -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Messages récents</h2>
+            {{-- <a href="{{ route('admin.contacts.index') }}" class="btn btn-sm btn-primary">
+                Voir tous
+            </a> --}}
+        </div>
+        <div class="card-body">
+            @if($recentContacts->count() > 0)
+                <div class="list-group">
+                    @foreach($recentContacts as $contact)
+                    <div style="padding: 15px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 5px;">
+                                    {{ $contact->name }}
+                                </h4>
+                                <p style="font-size: 13px; color: #64748b; margin-bottom: 5px;">
+                                    {{ $contact->email }}
+                                </p>
+                                <p style="font-size: 13px; color: #334155;">
+                                    {{ Str::limit($contact->message, 60) }}
+                                </p>
+                            </div>
+                            <span style="font-size: 12px; color: #64748b;">
+                                {{ $contact->created_at->diffForHumans() }}
+                            </span>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-                <a href="{{ route('admin.annonces.edit', $annonce) }}" style="color: #fdb714; text-decoration: none;">
-                    <i class="fas fa-edit"></i>
-                </a>
-            </div>
-        @empty
-            <p style="color: #7f8c8d; text-align: center; padding: 20px;">Aucune annonce disponible</p>
-        @endforelse
-        {{-- <a href="{{ route('admin.annonces.index') }}" style="display: block; text-align: center; margin-top: 15px; color: #fdb714; text-decoration: none; font-weight: 600;">
-            Voir tout <i class="fas fa-arrow-right"></i>
-        </a> --}}
+            @else
+                <p style="text-align: center; color: #64748b; padding: 20px;">
+                    Aucun message pour le moment
+                </p>
+            @endif
+        </div>
     </div>
 
-    <!-- Recent Services -->
-    <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h2 style="font-size: 20px; margin-bottom: 20px; color: #2c3e50;">Derniers Services</h2>
-        @forelse($stats['recent_services'] as $service)
-            <div style="padding: 15px; border-bottom: 1px solid #ecf0f1; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 5px;">{{ Str::limit($service->title, 30) }}</h4>
-                    <small style="color: #7f8c8d;">{{ $service->categorie ?? 'Non catégorisé' }}</small>
+    <!-- Recent Announcements -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Annonces récentes</h2>
+            <a href="{{ route('admin.annonces.index') }}" class="btn btn-sm btn-primary">
+                Voir toutes
+            </a>
+        </div>
+        <div class="card-body">
+            @if($recentAnnonces->count() > 0)
+                <div class="list-group">
+                    @foreach($recentAnnonces as $annonce)
+                    <div style="padding: 15px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 5px;">
+                                    {{ $annonce->title }}
+                                </h4>
+                                <p style="font-size: 13px; color: #334155;">
+                                    {{ Str::limit($annonce->description, 80) }}
+                                </p>
+                            </div>
+                            <span style="font-size: 12px; color: #64748b;">
+                                {{ $annonce->created_at->diffForHumans() }}
+                            </span>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-                <a href="{{ route('admin.services.edit', $service) }}" style="color: #fdb714; text-decoration: none;">
-                    <i class="fas fa-edit"></i>
-                </a>
-            </div>
-        @empty
-            <p style="color: #7f8c8d; text-align: center; padding: 20px;">Aucun service disponible</p>
-        @endforelse
-        {{-- <a href="{{ route('admin.services.index') }}" style="display: block; text-align: center; margin-top: 15px; color: #fdb714; text-decoration: none; font-weight: 600;">
-            Voir tout <i class="fas fa-arrow-right"></i>
-        </a> --}}
+            @else
+                <p style="text-align: center; color: #64748b; padding: 20px;">
+                    Aucune annonce pour le moment
+                </p>
+            @endif
+        </div>
     </div>
 </div>
 
 <!-- Quick Actions -->
-<div style="margin-top: 30px;">
-    <h2 style="font-size: 22px; margin-bottom: 20px; color: #2c3e50;">Actions Rapides</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-        <a href="{{ route('admin.services.create') }}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; text-decoration: none; text-align: center; transition: all 0.3s;">
-            <i class="fas fa-plus-circle" style="font-size: 32px; margin-bottom: 10px; display: block;"></i>
-            <span style="font-weight: 600;">Nouveau Service</span>
-        </a>
-        <a href="{{ route('admin.annonces.create') }}" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 10px; text-decoration: none; text-align: center; transition: all 0.3s;">
-            <i class="fas fa-plus-circle" style="font-size: 32px; margin-bottom: 10px; display: block;"></i>
-            <span style="font-weight: 600;">Nouvelle Annonce</span>
-        </a>
-        {{-- <a href="{{ route('admin.membres.create') }}" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 10px; text-decoration: none; text-align: center; transition: all 0.3s;">
-            <i class="fas fa-plus-circle" style="font-size: 32px; margin-bottom: 10px; display: block;"></i>
-            <span style="font-weight: 600;">Nouveau Membre</span>
-        </a> --}}
+<div class="card" style="margin-top: 20px;">
+    <div class="card-header">
+        <h2>Actions rapides</h2>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Ajouter un service
+            </a>
+            <a href="{{ route('admin.annonces.create') }}" class="btn btn-success">
+                <i class="fas fa-plus"></i> Créer une annonce
+            </a>
+            <a href="{{ route('admin.membres.create') }}" class="btn btn-warning">
+                <i class="fas fa-plus"></i> Ajouter un membre
+            </a>
+            <a href="{{ route('home') }}" target="_blank" class="btn btn-primary">
+                <i class="fas fa-globe"></i> Voir le site web
+            </a>
+        </div>
     </div>
 </div>
 @endsection
