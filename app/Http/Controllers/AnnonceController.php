@@ -12,8 +12,25 @@ class AnnonceController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
-        return view('annonce');
+        $annonces = Annonce::latest()->paginate(9);
+        return view('annonce', compact('annonces'));
+    }
+
+    /**
+     * Afficher une annonce spécifique
+     */
+    public function show($id)
+    {
+        $annonce = Annonce::findOrFail($id);
+        
+        // Récupérer les 3 dernières annonces (sauf celle en cours)
+        $autresAnnonces = Annonce::where('id', '!=', $id)
+                                 ->latest()
+                                 ->take(3)
+                                 ->get();
+        
+        return view('annonce-detail', compact('annonce', 'autresAnnonces'));
     }
 }

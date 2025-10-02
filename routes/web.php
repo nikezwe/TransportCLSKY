@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/annonces', [AnnonceController::class, 'index'])->name('annonce');
+Route::get('/annonce',[AnnonceController::class, 'index'])->name('annonce');
+Route::get('/annonce/{id}', [AnnonceController::class, 'show'])->name('annonce.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
