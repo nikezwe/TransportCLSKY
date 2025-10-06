@@ -9,8 +9,8 @@
                 <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
                 <p>Our Services</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">LEARN MORE</button>
-                    <button class="btn btn-secondary">OUR SERVICES</button>
+                    <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
+                    <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>
                 </div>
             </div>
         </div>

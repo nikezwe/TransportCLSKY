@@ -9,11 +9,12 @@
                 <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
                 <p>Contact Us</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">LEARN MORE</button>
-                    <button class="btn btn-secondary">OUR SERVICES</button>
+                    <div class="hero-buttons">
+                        <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
+                        <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Contact Section -->
     <section class="contact">
@@ -60,7 +61,7 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <form class="contact-form" onsubmit="handleSubmit(event)"method="post">
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="text" placeholder="Votre Nom *" required>

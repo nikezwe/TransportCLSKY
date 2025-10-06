@@ -9,8 +9,8 @@
                 <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
                 <p>Actualites</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">LEARN MORE</button>
-                    <button class="btn btn-secondary">OUR SERVICES</button>
+                    <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
+                    <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>
                 </div>
             </div>
         </div>
@@ -19,67 +19,125 @@
         <div class="container">
             <div class="section-title">
                 <h2>Actualités & <span>Annonces</span></h2>
-                <p>Restez informés de nos dernières nouvelles, projets et actualités du secteur de la construction.</p>
+                <p>Restez informés de nos dernières nouvelles et actualités.</p>
             </div>
 
             <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="news-date">
-                            <span class="day">25</span>
-                            <span class="month">Sept</span>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-user"></i> Par Admin</span>
-                            <span><i class="fas fa-comments"></i> 15 Commentaires</span>
-                        </div>
-                        <h3>Nouveau projet de construction durable lancé</h3>
-                        <p>Nous sommes fiers d'annoncer le lancement de notre nouveau projet de construction écologique qui
-                            intègre les dernières technologies vertes...</p>
-                        <a href="#" class="read-more">Lire plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+                @if ($annonces && $annonces->count() > 0)
+                    {{-- Afficher les annonces depuis la base de données --}}
+                    @foreach ($annonces as $index => $annonce)
+                        @php
+                            $gradients = [
+                                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                                'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                            ];
+                            $gradient = $gradients[$index % count($gradients)];
+                        @endphp
 
-                <div class="news-card">
-                    <div class="news-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="news-date">
-                            <span class="day">20</span>
-                            <span class="month">Sept</span>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-user"></i> Par Admin</span>
-                            <span><i class="fas fa-comments"></i> 23 Commentaires</span>
-                        </div>
-                        <h3>Davana remporte le prix de l'excellence</h3>
-                        <p>Notre entreprise a été récompensée pour son excellence dans le domaine de la construction et son
-                            engagement envers la qualité...</p>
-                        <a href="#" class="read-more">Lire plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+                        <div class="news-card">
+                            @if ($annonce->image)
+                                {{-- Si l'annonce a une image --}}
+                                <div class="news-image"
+                                    style="background: url('{{ asset('storage/' . $annonce->image) }}') center/cover;">
+                                    <div class="news-date">
+                                        <span class="day">{{ $annonce->created_at->format('d') }}</span>
+                                        <span class="month">{{ $annonce->created_at->format('M') }}</span>
+                                    </div>
+                                </div>
+                            @else
+                                {{-- Sinon afficher un gradient --}}
+                                <div class="news-image" style="background: {{ $gradient }};">
+                                    <div class="news-date">
+                                        <span class="day">{{ $annonce->created_at->format('d') }}</span>
+                                        <span class="month">{{ $annonce->created_at->format('M') }}</span>
+                                    </div>
+                                </div>
+                            @endif
 
-                <div class="news-card">
-                    <div class="news-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <div class="news-date">
-                            <span class="day">15</span>
-                            <span class="month">Sept</span>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span><i class="fas fa-user"></i> Par Admin</span>
+                                    <span><i class="fas fa-calendar"></i> {{ $annonce->created_at->format('d/m/Y') }}</span>
+                                </div>
+                                <h3>{{ $annonce->title }}</h3>
+                                <p>{{ Str::limit($annonce->description, 120) }}</p>
+
+                                <a href="{{ route('annonce.show', $annonce->id) }}" class="read-more">
+                                    Lire plus <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    {{-- Annonces par défaut si la base de données est vide --}}
+                    <div class="news-card">
+                        <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="news-date">
+                                <span class="day">25</span>
+                                <span class="month">Sept</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="fas fa-user"></i> Par Admin</span>
+                            </div>
+                            <h3>Service de qualité</h3>
+                            <p>CLSKY continue d'offrir des services de transport fiables et sécurisés entre la Chine et le
+                                Burundi...</p>
+                            <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-user"></i> Par Admin</span>
-                            <span><i class="fas fa-comments"></i> 8 Commentaires</span>
+
+                    <div class="news-card">
+                        <div class="news-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <div class="news-date">
+                                <span class="day">20</span>
+                                <span class="month">Sept</span>
+                            </div>
                         </div>
-                        <h3>Nouvelles techniques de construction innovantes</h3>
-                        <p>Découvrez les dernières innovations technologiques que nous avons intégrées dans nos processus de
-                            construction pour améliorer l'efficacité...</p>
-                        <a href="#" class="read-more">Lire plus <i class="fas fa-arrow-right"></i></a>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="fas fa-user"></i> Par Admin</span>
+                            </div>
+                            <h3>Nouveaux services disponibles</h3>
+                            <p>Découvrez nos nouveaux services de dédouanement et assistance visa pour faciliter vos
+                                démarches...</p>
+                            <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="news-card">
+                        <div class="news-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">Sept</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="fas fa-user"></i> Par Admin</span>
+                            </div>
+                            <h3>Partenariat stratégique</h3>
+                            <p>CLSKY renforce ses partenariats avec les principaux ports chinois pour un service encore plus
+                                efficace...</p>
+                            <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                @endif
             </div>
+
+            {{-- Bouton pour voir toutes les annonces si plus de 3 --}}
+            @if ($annonces && $annonces->count() > 3)
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="{{ route('annonce') }}" class="btn btn-primary">
+                        Voir toutes les actualités <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            @endif
         </div>
     </section>
 @endsection

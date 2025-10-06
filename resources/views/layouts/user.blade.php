@@ -72,14 +72,8 @@
                                 <p>Transportation</p>
                             </div>
                         </div>
-                        <p class="footer-desc">Passsionne par votre satisfaction par une personne experimente.Transport de vos marchandise par la voie maritime et aerienne de la CHINE au BURUNDI</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
+                        <p class="footer-desc">Passsionne par votre satisfaction par une personne experimente.Transport
+                            de vos marchandise par la voie maritime et aerienne de la CHINE au BURUNDI</p>
                     </div>
 
                     <div class="footer-column">
@@ -99,20 +93,23 @@
                             <li><a href="#"><i class="fas fa-angle-right"></i> Transport CHINE-BURUNDI</a></li>
                             <li><a href="#"><i class="fas fa-angle-right"></i> Importation et Exportation</a></li>
                             <li><a href="#"><i class="fas fa-angle-right"></i> Dedouanement</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Paiement des fournisseurs en chine</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i> Paiement des fournisseurs en
+                                    chine</a></li>
                             <li><a href="#"><i class="fas fa-angle-right"></i> Services des visas</a></li>
                             <li><a href="#"><i class="fas fa-angle-right"></i> Les billets d'avion</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h4>Newsletter</h4>
-                        <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et offres spéciales.
-                        </p>
-                        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-                            <input type="email" placeholder="Votre email" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
+                        <h4>Suivez-nous</h4>
+                        <p>Suivez-nous sur les liens ci-dessous</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                         <div class="footer-contact-info">
                             <p><i class="fas fa-phone-alt"></i> (+888) 567-290-456</p>
                             <p><i class="fas fa-envelope"></i> info@clsky.com</p>
@@ -132,4 +129,5 @@
     <script src="{{ asset('js/user.js') }}"></script>
     @stack('scripts')
 </body>
+
 </html>

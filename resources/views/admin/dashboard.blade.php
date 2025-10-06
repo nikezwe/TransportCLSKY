@@ -131,27 +131,4 @@
         </div>
     </div>
 </div>
-
-<!-- Quick Actions -->
-<div class="card" style="margin-top: 20px;">
-    <div class="card-header">
-        <h2>Actions rapides</h2>
-    </div>
-    <div class="card-body">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-            <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Ajouter un service
-            </a>
-            <a href="{{ route('admin.annonces.create') }}" class="btn btn-success">
-                <i class="fas fa-plus"></i> Créer une annonce
-            </a>
-            <a href="{{ route('admin.membres.create') }}" class="btn btn-warning">
-                <i class="fas fa-plus"></i> Ajouter un membre
-            </a>
-            <a href="{{ route('home') }}" target="_blank" class="btn btn-primary">
-                <i class="fas fa-globe"></i> Voir le site web
-            </a>
-        </div>
-    </div>
-</div>
 @endsection

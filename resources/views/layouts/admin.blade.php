@@ -49,12 +49,6 @@
                             <span>Équipe</span>
                         </a>
                     </li>
-                    {{-- <li>
-                        <a href="{{route('admin.contacts.index')}}" class="{{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
-                            <i class="fas fa-envelope"></i>
-                            <span>Messages</span>
-                        </a>
-                    </li> --}}
                     <li class="divider"></li>
                     <li>
                         <a href="{{ route('home') }}" target="_blank">
