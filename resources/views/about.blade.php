@@ -6,7 +6,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
+                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
                 <p>About Us</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">LEARN MORE</button>
@@ -56,9 +56,9 @@
                 </div>
             </div>
             <div class="welcome-image">
-            <div class="welcome-image">
-                <img src="img/img1.png" style="width: 100%; height: 500px"></img>
-            </div>
+                <div class="welcome-image">
+                    <img src="img/img1.png" style="width: 100%; height: 500px"></img>
+                </div>
             </div>
         </div>
     </section>

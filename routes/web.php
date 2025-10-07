@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/annonce',[AnnonceController::class, 'index'])->name('annonce');
+Route::get('/annonce', [AnnonceController::class, 'index'])->name('annonce');
 Route::get('/annonce/{id}', [AnnonceController::class, 'show'])->name('annonce.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -47,14 +47,14 @@ Route::get('/membres', [MembreController::class, 'index'])->name('membre');
 // Routes d'administration
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
 
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('services', ServicesController::class)->except(['show']);
 
     Route::resource('annonces', AnnoncesController::class)->except(['show']);
-    
+
     Route::resource('membres', TeamController::class)->except(['show']);
-    
     // Route::get('contacts', [ContactsController::class, 'index'])->name('contacts.index');
     // Route::get('contacts/{contact}', [ContactsController::class, 'show'])->name('contacts.show');
     // Route::delete('contacts/{contact}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
@@ -62,6 +62,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
 
 // Route de déconnexion
+
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
