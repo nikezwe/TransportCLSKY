@@ -122,7 +122,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé avec <i class="fas fa-heart"></i> par
+                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé par
                     AdvancedIT Burundi Team</p>
             </div>
         </div>
