@@ -6,7 +6,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
+                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
                 <p>Contact Us</p>
                 <div class="hero-buttons">
                     <div class="hero-buttons">
@@ -37,10 +37,10 @@
 
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+888) 567-290-456<br>(+888) 567-290-457</p>
+                        <p>(+257) 67 150 000<br>(+888) 567-290-457</p>
                     </div>
 
                     <div class="contact-card">

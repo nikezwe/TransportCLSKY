@@ -6,7 +6,9 @@
     <meta charset="utf-8">
     <title>@yield('title', 'CL SKY - Transport Chine-Burundi')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">
     @stack('head')
 </head>
@@ -16,7 +18,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <i class="fas fa-hard-hat"></i>
+                {{-- <i class="fas fa-hard-hat"></i> --}}
                 <div class="logo-text">
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('img/icon.jpg') }}" alt="Logo" style="height: 50px;">
@@ -33,7 +35,7 @@
                     </div>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone"></i>
                     <div class="contact-info">
                         <h4>Call Now</h4>
                         <p>(+257) 65-331-185</p>
@@ -67,7 +69,7 @@
                 <div class="footer-grid">
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <i class="fas fa-hard-hat"></i>
+                            <img src="{{ asset('img/CL_SKY.png') }}" alt="">
                             <div>
                                 <h3>CLSKY</h3>
                                 <p>Transportation</p>
@@ -80,11 +82,11 @@
                     <div class="footer-column">
                         <h4>Liens Rapides</h4>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fas fa-angle-right"></i> HOME</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> ABOUT</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> SERVICES</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> ACTUALITES</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> CONTACT</a></li>
+                            <li><a href="{{ route('home') }}"><i class="fas fa-angle-right"></i> HOME</a></li>
+                            <li><a href="{{ route('about') }}"><i class="fas fa-angle-right"></i> ABOUT</a></li>
+                            <li><a href="{{ route('service') }}"><i class="fas fa-angle-right"></i> SERVICES</a></li>
+                            <li><a href="{{ route('annonce') }}"><i class="fas fa-angle-right"></i> ACTUALITES</a></li>
+                            <li><a href="{{ route('contact') }}"><i class="fas fa-angle-right"></i> CONTACT</a></li>
                         </ul>
                     </div>
 
@@ -102,7 +104,7 @@
                     </div>
 
                     <div class="footer-column">
-                        <h4>Suivez-nous</h4>
+                        <h4>Contactez-nous</h4>
                         <p>Suivez-nous sur les liens ci-dessous</p>
                         <div class="footer-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -112,7 +114,7 @@
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                         <div class="footer-contact-info">
-                            <p><i class="fas fa-phone-alt"></i> (+888) 567-290-456</p>
+                            <p><i class="fas fa-phone"></i> (+257) 67 150 000</p>
                             <p><i class="fas fa-envelope"></i> info@clsky.com</p>
                         </div>
                     </div>
@@ -122,8 +124,9 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé par
-                    AdvancedIT Burundi Team</p>
+                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé avec <i class="fas fa-heart"></i> par
+                    <a href="https://advancedit.bi">AdvancedIT Burundi</a>
+                </p>
             </div>
         </div>
     </footer>

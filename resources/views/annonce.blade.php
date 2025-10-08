@@ -6,7 +6,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING SHINE FROM CHINA-BURUNDI</h1>
+                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
                 <p>Actualites</p>
                 <div class="hero-buttons">
                     <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
