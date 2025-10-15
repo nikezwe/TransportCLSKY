@@ -8,7 +8,7 @@
             <div class="hero-content">
                 <h2>CLSKY TRANSPORTATION</h2>
                 <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
-                <p>GURA, RANGURA MUR CHINE</p>
+                <p>GURA, RANGURA MURI CHINE</p>
                 <div class="hero-buttons">
                     <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
                     <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>

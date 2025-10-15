@@ -1,26 +1,19 @@
 @extends('layouts.user')
 @section('title', 'Contact Us')
 @section('content')
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Banner Section -->
+    <section class="banner">
         <div class="container">
-            <div class="hero-content">
-                <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
-                <p>Contact Us</p>
-                <div class="hero-buttons">
-                    <div class="hero-buttons">
-                        <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
-                        <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>
-                    </div>
-                </div>
+            <div class="banner-content">
+                <h2>Contactez-nous</h2>
             </div>
+        </div>
     </section>
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contactez <span>Nous</span></h2>
+                {{-- <h2>Contactez <span>Nous</span></h2> --}}
                 <p>N'hésitez pas à nous contacter pour toute question ou demande de devis. Notre équipe est à votre
                     disposition.</p>
             </div>
@@ -32,7 +25,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3>Notre Adresse</h3>
-                        <p>10005, Battery Park<br>New York, NY, USA</p>
+                        <p>Bujumbura mairie, Rohero 1 <br>
+                            Avenue de Croix Rouge Num 2</p>
                     </div>
 
                     <div class="contact-card">
@@ -40,7 +34,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+257) 67 150 000<br>(+888) 567-290-457</p>
+                        <p>(+257) 67 150 000 <br>
+                            (+257) 67 250 000</p>
                     </div>
 
                     <div class="contact-card">
@@ -48,7 +43,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <p>info@davana.com<br>contact@davana.com</p>
+                        <p>info@clsky.com <br>
+                            contact@clsky.com </p>
                     </div>
 
                     <div class="contact-card">

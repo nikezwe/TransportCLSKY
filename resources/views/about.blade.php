@@ -1,17 +1,11 @@
 @extends('layouts.user')
 @section('title', 'About Us')
 @section('content')
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Banner Section -->
+    <section class="banner">
         <div class="container">
-            <div class="hero-content">
-                <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
-                <p>About Us</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">LEARN MORE</button>
-                    <button class="btn btn-secondary">OUR SERVICES</button>
-                </div>
+            <div class="banner-content">
+                <h2>About Us</h2>
             </div>
         </div>
     </section>
@@ -19,46 +13,42 @@
     <section class="welcome">
         <div class="container">
             <div class="welcome-content">
-                <h2>Welcome To <span>CLSKY</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat.</p>
-
+                <h2>Nous assurons le transport des biens de la CHINE au <span>BURUNDI</span></h2>
+                <p></p>
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-hard-hat"></i>
+                        <i class="fas fa-ship"></i>
                         <div>
-                            <h3>Home Service</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+                            <h3>Transport Maritime</h3>
+                            <p>CLSKY Company vous offre un service d'expédition de vos marchandises depuis la Chine au
+                                Burundi par la voie maritime.</p>
                         </div>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-plane"></i>
                         <div>
-                            <h3>Excellence Workers</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+                            <h3>Transport Aérien</h3>
+                            <p>Service de transport rapide par voie aérienne pour vos envois urgents et prioritaires.</p>
                         </div>
                     </div>
                     <div class="feature">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <h3>Quick Response</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+                            <h3>Livraison Rapide</h3>
+                            <p>Délais de livraison garantis avec suivi en temps réel de vos marchandises.</p>
                         </div>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-shield-alt"></i>
                         <div>
-                            <h3>Quality Instrument</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+                            <h3>Sécurité Garantie</h3>
+                            <p>Protection complète de vos biens avec assurance transport internationale.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="welcome-image">
-                <div class="welcome-image">
-                    <img src="img/img1.png" style="width: 100%; height: 500px"></img>
-                </div>
+                <img src="{{ asset('img/img1.png') }}" style="width: 100%; height: 500px; object-fit: cover;">
             </div>
         </div>
     </section>
