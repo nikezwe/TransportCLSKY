@@ -48,7 +48,7 @@
 
                         <!-- Meta Info -->
                         <div
-                            style="display: flex; align-items: center; gap: 25px; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0; margin-bottom: 30px; flex-wrap: wrap;">
+                            style="display: flex; align-items: center; gap: 25px; padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap;">
                             <div style="display: flex; align-items: center; gap: 8px; color: #7f8c8d;">
                                 <i class="fas fa-calendar-alt" style="color: #var(--main-bg-color);"></i>
                                 <span>{{ $annonce->created_at->format('d F Y') }}</span>
@@ -64,7 +64,7 @@
                         </div>
 
                         <!-- Article Content -->
-                        <div style="font-size: 16px; line-height: 1.8; color: #333;">
+                        {{-- <div style="font-size: 16px; line-height: 1.8; color: #333;">
                             {!! nl2br(e($annonce->description)) !!}
                         </div>
 
@@ -74,13 +74,12 @@
                                 style="margin-top: 40px; padding: 30px; background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%); border-radius: 10px; text-align: center;">
                                 <h3 style="color: white; margin-bottom: 15px; font-size: 20px; font-weight: 600;">En savoir
                                     plus</h3>
-                                {{-- <a href="{{ $annonce->link }}" 
-                           target="_blank" 
-                           style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: #var(--main-bg-color); color: #2c3e50; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
-                            Visitez le lien externe <i class="fas fa-external-link-alt"></i>
-                        </a> --}}
+                                <a href="{{ $annonce->link }}" target="_blank"
+                                    style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: #var(--main-bg-color); color: #2c3e50; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                                    Visitez le lien externe <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
-                        @endif
+                        @endif --}}
 
                         <!-- Share Section -->
                         <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #e0e0e0;">
@@ -111,13 +110,13 @@
                 </div>
 
                 <!-- Navigation -->
-                <div
+                {{-- <div
                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; gap: 15px; flex-wrap: wrap;">
                     <a href="{{ route('annonce') }}"
                         style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background: white; color: #2c3e50; border-radius: 5px; text-decoration: none; font-weight: 600; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: all 0.3s;">
                         <i class="fas fa-arrow-left"></i> Retour aux actualités
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -186,7 +185,7 @@
     @endif
 
     <!-- CTA Section -->
-    <section
+    {{-- <section
         style="padding: 60px 0; background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%); text-align: center; color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <h2 style="font-size: 32px; margin-bottom: 15px; font-weight: 700;">Restez Informé</h2>
@@ -203,6 +202,6 @@
                 </button>
             </form>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
