@@ -167,9 +167,14 @@ body {
     font-weight: 500;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu a:active {
     background: var(--main-bg-color);
+    color: white;
+}
+
+.nav-menu a:hover {
+    background: var(--main-bg-color);
+    color: white;
 }
 
 .nav-address {
@@ -190,7 +195,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url("/img/carousel-1.jpg");
+    background-image: linear-gradient(#00000018, rgba(0, 0, 0, 0.5)),
+        url("/img/carousel-1.jpg");
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -223,7 +229,8 @@ body {
 }
 
 .hero-content p {
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 18px;
     margin-bottom: 30px;
     max-width: 600px;
 }
@@ -286,6 +293,22 @@ body {
 .indicator.active {
     background: var(--main-bg-color);
     width: 60px;
+}
+
+/*Banner Section*/
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.905), #af520037),
+        url(../img/carousel-1.jpg) center center no-repeat;
+    color: white;
+    padding: 60px 0 80px;
+    text-align: center;
+    position: relative;
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideInUp 1s ease;
 }
 
 /* Welcome Section */
@@ -859,7 +882,7 @@ Services Section .services {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1.5fr;
     gap: 40px;
 }
 

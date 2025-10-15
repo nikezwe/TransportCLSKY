@@ -1,24 +1,18 @@
 @extends('layouts.user')
 @section('title', 'Annonces')
 @section('content')
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Banner Section -->
+    <section class="banner">
         <div class="container">
-            <div class="hero-content">
-                <h2>CLSKY TRANSPORTATION</h2>
-                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
-                <p>Actualites</p>
-                <div class="hero-buttons">
-                    <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
-                    <a href="{{ route('service') }}" class="btn btn-secondary">OUR SERVICES</a>
-                </div>
+            <div class="banner-content">
+                <h2>Nos Actualités</h2>
             </div>
         </div>
     </section>
     <section class="news">
         <div class="container">
             <div class="section-title">
-                <h2>Actualités & <span>Annonces</span></h2>
+                {{-- <h2>Actualités & <span>Annonces</span></h2> --}}
                 <p>Restez informés de nos dernières nouvelles et actualités.</p>
             </div>
 
@@ -131,13 +125,13 @@
             </div>
 
             {{-- Bouton pour voir toutes les annonces si plus de 3 --}}
-            @if ($annonces && $annonces->count() > 3)
+            {{-- @if ($annonces && $annonces->count() > 3)
                 <div style="text-align: center; margin-top: 40px;">
                     <a href="{{ route('annonce') }}" class="btn btn-primary">
                         Voir toutes les actualités <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-            @endif
+            @endif --}}
         </div>
     </section>
 @endsection

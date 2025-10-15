@@ -55,7 +55,7 @@
                 <li><a href="{{ route('home') }}" class="active">HOME</a></li>
                 <li><a href="{{ route('about') }}">ABOUT</a></li>
                 <li><a href="{{ route('service') }}">SERVICES</a></li>
-                <li><a href="{{ route('annonce') }}">ACTUALITES</a></li>
+                <li><a href="{{ route('annonce') }}">Actualités</a></li>
                 <li><a href="{{ route('contact') }}">CONTACT</a></li>
             </ul>
         </div>
@@ -93,18 +93,25 @@
                     <div class="footer-column">
                         <h4>Nos Services</h4>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Transport CHINE-BURUNDI</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Importation et Exportation</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Dedouanement</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Paiement des fournisseurs en
+                            <li><a href="#">Transport CHINE-BURUNDI</a></li>
+                            <li><a href="#">Importation et Exportation</a></li>
+                            <li><a href="#">Dedouanement</a></li>
+                            <li><a href="#">Paiement des fournisseurs en
                                     chine</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Services des visas</a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i> Les billets d'avion</a></li>
+                            <li><a href="#">Services des visas</a></li>
+                            <li><a href="#">Les billets d'avion</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
                         <h4>Contactez-nous</h4>
+
+                        <div class="footer-contact-info">
+                            <p><i class="fa-solid fa-location-dot"></i> Bujumbura mairie, Rohero 1
+                                Avenue de Croix Rouge Numéro 2 </p>
+                            <p><i class="fas fa-phone"></i> (+257) 67 150 000</p>
+                            <p><i class="fas fa-envelope"></i> info@clsky.com</p>
+                        </div>
                         <p>Suivez-nous sur les liens ci-dessous</p>
                         <div class="footer-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -113,10 +120,6 @@
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
-                        <div class="footer-contact-info">
-                            <p><i class="fas fa-phone"></i> (+257) 67 150 000</p>
-                            <p><i class="fas fa-envelope"></i> info@clsky.com</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -124,8 +127,8 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé avec <i class="fas fa-heart"></i> par
-                    <a href="https://advancedit.bi">AdvancedIT Burundi</a>
+                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé par
+                    <a target="_blank" href="https://advancedit.bi">Advanced IT Burundi</a>
                 </p>
             </div>
         </div>
