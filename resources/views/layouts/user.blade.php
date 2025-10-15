@@ -10,6 +10,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/servicemodal.css') }}" rel="stylesheet">
     @stack('head')
 </head>
 
@@ -134,6 +135,7 @@
         </div>
     </footer>
     <script src="{{ asset('js/user.js') }}"></script>
+    <script src="{{ asset('js/servicemodal.js') }}"></script>
     @stack('scripts')
 </body>
 
