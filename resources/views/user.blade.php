@@ -6,7 +6,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>CLSKY TRANSPORTATION</h2>
+                <h2>CL SKY TRANSPORTATION</h2>
                 <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
                 <p>GURA, RANGURA MURI CHINE</p>
                 <div class="hero-buttons">
@@ -28,7 +28,7 @@
                         <i class="fas fa-ship"></i>
                         <div>
                             <h3>Transport Maritime</h3>
-                            <p>CLSKY Company vous offre un service d'expédition de vos marchandises depuis la Chine au
+                            <p>CL SKY Company vous offre un service d'expédition de vos marchandises depuis la Chine au
                                 Burundi par la voie maritime.</p>
                         </div>
                     </div>
@@ -65,6 +65,7 @@
     <section class="gallery">
         <div class="container">
             <div class="section-title">
+                <h2>Nos Services</h2>
                 <p>Découvrez nos services.</p>
             </div>
 
@@ -186,7 +187,7 @@
                                 <span><i class="fas fa-user"></i> Par Admin</span>
                             </div>
                             <h3>Service de qualité</h3>
-                            <p>CLSKY continue d'offrir des services de transport fiables et sécurisés entre la Chine et le
+                            <p>CL SKY continue d'offrir des services de transport fiables et sécurisés entre la Chine et le
                                 Burundi...</p>
                             <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
                                     class="fas fa-arrow-right"></i></a>
@@ -224,7 +225,8 @@
                                 <span><i class="fas fa-user"></i> Par Admin</span>
                             </div>
                             <h3>Partenariat stratégique</h3>
-                            <p>CLSKY renforce ses partenariats avec les principaux ports chinois pour un service encore plus
+                            <p>CL SKY renforce ses partenariats avec les principaux ports chinois pour un service encore
+                                plus
                                 efficace...</p>
                             <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
                                     class="fas fa-arrow-right"></i></a>
@@ -268,7 +270,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+257) 67 150 000<br>(+257) 67 250 000</p>
+                        <p>(+257) 65 150 000<br>(+257) 65 250 000<br>(+257) 65 790 000</p>
                     </div>
 
                     <div class="contact-card">

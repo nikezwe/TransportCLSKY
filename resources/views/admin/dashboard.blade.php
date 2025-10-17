@@ -6,7 +6,7 @@
 @section('content')
 <div class="page-header">
     <h1>Tableau de bord</h1>
-    <p>Bienvenue dans l'espace d'administration CLSKY</p>
+    <p>Bienvenue dans l'espace d'administration CL SKY</p>
 </div>
 
 <!-- Statistics -->
