@@ -34,8 +34,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+257) 67 150 000 <br>
-                            (+257) 67 250 000</p>
+                        <p>(+257) 65 150 000 <br>
+                            (+257) 65 250 000</p>
                     </div>
 
                     <div class="contact-card">

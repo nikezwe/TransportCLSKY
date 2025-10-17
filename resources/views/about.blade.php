@@ -20,7 +20,7 @@
                         <i class="fas fa-ship"></i>
                         <div>
                             <h3>Transport Maritime</h3>
-                            <p>CLSKY Company vous offre un service d'expédition de vos marchandises depuis la Chine au
+                            <p>CL SKY Company vous offre un service d'expédition de vos marchandises depuis la Chine au
                                 Burundi par la voie maritime.</p>
                         </div>
                     </div>

@@ -77,7 +77,7 @@
                                 <span><i class="fas fa-user"></i> Par Admin</span>
                             </div>
                             <h3>Service de qualité</h3>
-                            <p>CLSKY continue d'offrir des services de transport fiables et sécurisés entre la Chine et le
+                            <p>CL SKY continue d'offrir des services de transport fiables et sécurisés entre la Chine et le
                                 Burundi...</p>
                             <a href="{{ route('annonce') }}" class="read-more">Lire plus <i
                                     class="fas fa-arrow-right"></i></a>

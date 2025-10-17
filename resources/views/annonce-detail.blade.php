@@ -15,7 +15,7 @@
                 </span>
                 <span style="display: flex; align-items: center; gap: 8px;">
                     <i class="fas fa-user" style="color: #var(--main-bg-color);"></i>
-                    Par Admin CLSKY
+                    Par Admin CL SKY
                 </span>
             </div>
         </div>
@@ -59,7 +59,7 @@
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px; color: #7f8c8d;">
                                 <i class="fas fa-user" style="color: #var(--main-bg-color);"></i>
-                                <span>Admin CLSKY</span>
+                                <span>Admin CL SKY</span>
                             </div>
                         </div>
 

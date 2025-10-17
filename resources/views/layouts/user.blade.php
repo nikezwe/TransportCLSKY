@@ -39,7 +39,7 @@
                     <i class="fas fa-phone"></i>
                     <div class="contact-info">
                         <h4>Call Now</h4>
-                        <p>(+257) 65-331-185</p>
+                        <p>(+257) 65-150-000</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <div class="footer-logo">
                             <img src="{{ asset('img/CL_SKY.png') }}" alt="">
                             <div>
-                                <h3>CLSKY</h3>
+                                <h3>CL SKY Company</h3>
                                 <p>Transportation</p>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="footer-contact-info">
                             <p><i class="fa-solid fa-location-dot"></i> Bujumbura mairie, Rohero 1
                                 Avenue de Croix Rouge Numéro 2 </p>
-                            <p><i class="fas fa-phone"></i> (+257) 67 150 000</p>
+                            <p><i class="fas fa-phone"></i> (+257) 65 150 000/ 65 210 000</p>
                             <p><i class="fas fa-envelope"></i> info@clsky.com</p>
                         </div>
                         <p>Suivez-nous sur les liens ci-dessous</p>
@@ -128,7 +128,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 CLSKY BURUNDI. Tous droits réservés. | Développé par
+                <p>&copy; 2025 CL SKY BURUNDI. Tous droits réservés. | Développé par
                     <a target="_blank" href="https://advancedit.bi">Advanced IT Burundi</a>
                 </p>
             </div>

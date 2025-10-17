@@ -1,6 +1,7 @@
 <!-- resources/views/layouts/admin.blade.php -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
+
 <body>
     <div class="admin-wrapper">
         <!-- Sidebar -->
@@ -16,7 +18,7 @@
             <div class="sidebar-header">
                 <div class="logo">
                     <img src="{{ asset('img/icon.jpg') }}" alt="Logo">
-                    <h3>CLSKY Admin</h3>
+                    <h3>CL SKY Admin</h3>
                 </div>
                 <button class="sidebar-toggle" onclick="toggleSidebar()">
                     <i class="fas fa-times"></i>
@@ -26,25 +28,29 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('admin.dashboard') }}"
+                            class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.services.index')}}" class="{{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.services.index') }}"
+                            class="{{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
                             <i class="fas fa-briefcase"></i>
                             <span>Services</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.annonces.index')}}" class="{{ request()->routeIs('admin.annonces.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.annonces.index') }}"
+                            class="{{ request()->routeIs('admin.annonces.*') ? 'active' : '' }}">
                             <i class="fas fa-bullhorn"></i>
                             <span>Annonces</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.membres.index')}}" class="{{ request()->routeIs('admin.membres.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.membres.index') }}"
+                            class="{{ request()->routeIs('admin.membres.*') ? 'active' : '' }}">
                             <i class="fas fa-users"></i>
                             <span>Équipe</span>
                         </a>
@@ -87,14 +93,14 @@
 
             <!-- Page Content -->
             <main class="content">
-                @if(session('success'))
+                @if (session('success'))
                     <div class="alert alert-success">
                         <i class="fas fa-check-circle"></i>
                         {{ session('success') }}
                     </div>
                 @endif
 
-                @if(session('error'))
+                @if (session('error'))
                     <div class="alert alert-danger">
                         <i class="fas fa-exclamation-circle"></i>
                         {{ session('error') }}
@@ -106,7 +112,7 @@
 
             <!-- Footer -->
             <footer class="admin-footer">
-                <p>&copy; 2025 CLSKY. Tous droits réservés.</p>
+                <p>&copy; 2025 CL SKY. Tous droits réservés.</p>
             </footer>
         </div>
     </div>
@@ -114,4 +120,5 @@
     <script src="{{ asset('js/admin.js') }}"></script>
     @stack('scripts')
 </body>
+
 </html>
