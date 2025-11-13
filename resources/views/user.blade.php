@@ -84,10 +84,10 @@
                             $gradient = $gradients[$index % count($gradients)];
                         @endphp
 
-                        <div class="gallery-item">
-                            <div class="gallery-image service-item" data-title="{{ $service->title }}"
-                                data-description="{{ $service->description }}"
-                                data-image="{{ $service->image ? asset('storage/' . $service->image) : '' }}"
+                        <div class="gallery-item service-item" data-title="{{ $service->title }}"
+                            data-description="{{ $service->description }}"
+                            data-image="{{ $service->image ? asset('storage/' . $service->image) : '' }}">
+                            <div class="gallery-image"
                                 style="background: {{ $service->image ? 'url(' . asset('storage/' . $service->image) . ') center/cover' : $gradient }};">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-briefcase"></i>
@@ -115,7 +115,6 @@
             <p id="modalDescription"></p>
         </div>
     </div>
-    </section>
 
     <!-- News/Announcements Section - ANNONCES DYNAMIQUES -->
     <section class="news">
