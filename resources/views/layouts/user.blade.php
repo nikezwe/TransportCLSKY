@@ -115,11 +115,11 @@
                         </div>
                         <p>Suivez-nous sur les liens ci-dessous</p>
                         <div class="footer-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            {{-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a> --}}
+                            <a href="https://www.instagram.com/clskycompany/"><i class="fab fa-instagram"></i></a>
+                            {{-- <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a> --}}
                         </div>
                     </div>
                 </div>
