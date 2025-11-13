@@ -34,8 +34,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+257) 65 150 000 <br>
-                            (+257) 65 250 000</p>
+                        <p>(+257) 65 250 000<br>(+257) 65 280 000<br>(+257) 65 210 000<br>(+257) 65 150
+                            000<br>(+257) 65 790 000</p>
                     </div>
 
                     <div class="contact-card">
@@ -43,8 +43,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <p>info@clsky.com <br>
-                            contact@clsky.com </p>
+                        <p> <br>
+                            clskycompany@gmail.com </p>
                     </div>
 
                     <div class="contact-card">

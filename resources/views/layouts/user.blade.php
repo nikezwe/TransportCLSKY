@@ -32,7 +32,7 @@
                     <i class="far fa-envelope"></i>
                     <div class="contact-info">
                         <h4>Mail Us</h4>
-                        <p>info@clsky.com</p>
+                        <p>clskycompany@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -56,7 +56,7 @@
                 <li><a href="{{ route('home') }}" class="active">HOME</a></li>
                 <li><a href="{{ route('about') }}">ABOUT</a></li>
                 <li><a href="{{ route('service') }}">SERVICES</a></li>
-                <li><a href="{{ route('annonce') }}">Actualités</a></li>
+                <li><a href="{{ route('annonce') }}">ACTUALITES</a></li>
                 <li><a href="{{ route('contact') }}">CONTACT</a></li>
             </ul>
         </div>
@@ -111,7 +111,7 @@
                             <p><i class="fa-solid fa-location-dot"></i> Bujumbura mairie, Rohero 1
                                 Avenue de Croix Rouge Numéro 2 </p>
                             <p><i class="fas fa-phone"></i> (+257) 65 150 000/ 65 210 000</p>
-                            <p><i class="fas fa-envelope"></i> info@clsky.com</p>
+                            <p><i class="fas fa-envelope"></i> clskycompany@gmail.com</p>
                         </div>
                         <p>Suivez-nous sur les liens ci-dessous</p>
                         <div class="footer-social">

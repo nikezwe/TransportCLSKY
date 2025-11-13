@@ -7,7 +7,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2>CL SKY TRANSPORTATION</h2>
-                <h1>SHIPPING LINE FROM CHINA-BURUNDI</h1>
+                <h1>SHIPPING COMPANY FROM CHINA-BURUNDI</h1>
                 <p>GURA, RANGURA MURI CHINE</p>
                 <div class="hero-buttons">
                     <a href="{{ route('about') }}" class="btn btn-primary">LEARN MORE</a>
@@ -270,7 +270,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Téléphone</h3>
-                        <p>(+257) 65 150 000<br>(+257) 65 250 000<br>(+257) 65 790 000</p>
+                        <p>(+257) 65 250 000<br>(+257) 65 280 000<br>(+257) 65 210 000<br>(+257) 65 150
+                            000<br>(+257) 65 790 000</p>
                     </div>
 
                     <div class="contact-card">
@@ -278,7 +279,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <p>info@clsky.com<br>contact@clsky.com</p>
+                        <p>clskycompany@gmail.com<br>clskycompany@gmail.com</p>
                     </div>
 
                     <div class="contact-card">
